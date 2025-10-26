@@ -1,0 +1,671 @@
+/* 
+===============================================================================
+                          CSS BEGINNER'S GUIDE
+===============================================================================
+
+CSS ANATOMY BREAKDOWN:
+selector { property: value; }
+
+Example: h1 { color: blue; }
+- selector: "h1" (what HTML element to style)
+- property: "color" (what aspect to change)
+- value: "blue" (how to change it)
+- Semicolon: ";" (ends each declaration)
+- Curly braces: "{ }" (contain all properties for this selector)
+
+*/
+
+/* 
+===============================================================================
+                        GLOBAL BODY STYLES
+===============================================================================
+
+ELEMENT SELECTOR: "body"
+- Targets: The <body> element (the entire visible webpage)
+- Purpose: Sets default styles for the whole page
+- Why first: These styles inherit to all child elements
+*/
+
+body {
+  /* 
+    MARGIN PROPERTY
+    - What it does: Controls space OUTSIDE an element
+    - Value "0": Removes browser's default margin
+    - Why we do this: Browsers add default spacing we don't want
+    - Result: Page content touches the very edges of the browser window
+  */
+  margin: 0;
+  
+  /* 
+    FONT-FAMILY PROPERTY
+    - What it does: Sets the typeface for all text
+    - Value explanation:
+      - "Arial": First choice font (sans-serif, clean)
+      - "Helvetica": Backup if Arial isn't available
+      - "sans-serif": Final fallback (browser's default sans-serif)
+    - Font Stack: Browser tries each font left-to-right until it finds one
+    - Why sans-serif: Clean, modern, readable on screens
+  */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+===============================================================================
+                         HEADER/TOPBAR SECTION
+===============================================================================
+
+ID SELECTOR: "#topbar"
+- Targets: HTML element with id="topbar" (the <header> element)
+- ID vs Class: IDs are unique (only one per page), use # symbol
+- Purpose: Styles the top navigation bar of the website
+*/
+
+#topbar {
+  /* 
+    DISPLAY: FLEX
+    - What it does: Makes this element a "flex container"
+    - Result: Child elements become "flex items" that can be arranged
+    - Modern layout: Replaces older, trickier layout methods
+    - Enables: Easy horizontal/vertical alignment and spacing
+  */
+  display: flex;
+  
+  /* 
+    JUSTIFY-CONTENT: SPACE-BETWEEN
+    - What it does: Controls horizontal spacing of flex items
+    - "space-between": First item goes far left, last item goes far right
+    - Result: Creates automatic spacing between logo and navigation
+    - Other options: center, flex-start, flex-end, space-around
+  */
+  justify-content: space-between;
+  
+  /* 
+    PADDING PROPERTY
+    - What it does: Adds space INSIDE the element (between border and content)
+    - Value "14px 15px": 
+      - First number (14px): top and bottom padding
+      - Second number (15px): left and right padding
+    - Shorthand: Instead of writing 4 separate padding declarations
+    - Result: Content doesn't touch the edges of the header
+  */
+  padding: 14px 15px;
+  
+  /* 
+    BORDER-BOTTOM PROPERTY
+    - What it does: Adds a line at the bottom of the element
+    - Value breakdown:
+      - "2px": thickness of the line
+      - "solid": line style (vs. dashed, dotted, etc.)
+      - "#0d0e10": color in hexadecimal (very dark gray, almost black)
+    - Purpose: Visual separation between header and rest of page
+  */
+  border-bottom: 2px solid #0d0e10;
+  
+  /* 
+    BACKGROUND PROPERTY
+    - What it does: Sets the background color of the element
+    - Value "#cfd5db": Hexadecimal color code (light gray-blue)
+    - Hex colors: #RRGGBB format (Red, Green, Blue values)
+    - Result: Header has a light colored background
+  */
+  background: #cfd5db;
+}
+/* 
+===============================================================================
+                            LOGO STYLING
+===============================================================================
+
+CLASS SELECTOR: ".logo"
+- Targets: Any HTML element with class="logo"
+- Class vs ID: Classes can be reused multiple times, use . symbol
+- Purpose: Styles the website logo/brand name
+*/
+
+.logo {
+  /* 
+    FONT-WEIGHT PROPERTY
+    - What it does: Controls how thick/thin the text appears
+    - Value "bold": Makes text thicker and more prominent
+    - Other values: normal, lighter, 100-900 (numbers)
+    - Purpose: Makes the logo stand out in the header
+    - Result: Logo text is heavier/darker than regular text
+  */
+  font-weight: bold;
+}
+/* 
+===============================================================================
+                          HERO SECTION
+===============================================================================
+
+ID SELECTOR: "#hero"
+- Targets: HTML element with id="hero"
+- Purpose: Styles the main banner/intro section of the page
+- Hero sections: Large, prominent areas that grab attention
+*/
+
+#hero {
+  /* 
+    PADDING: 48px 16px
+    - Large top/bottom padding (48px): Creates breathing room above/below content
+    - Smaller left/right padding (16px): Prevents content from touching edges
+    - Why different values: Vertical space is more important for visual impact
+    - Result: Hero content has generous spacing around it
+  */
+  padding: 48px 16px;
+  
+  /* 
+    BACKGROUND COLOR
+    - Value "#eef2ff": Very light blue (almost white with blue tint)
+    - Purpose: Subtle background color to distinguish hero from other sections
+    - Light colors: Don't compete with text, maintain readability
+  */
+  background: #c6cef3;
+  
+  /* 
+    TEXT-ALIGN: CENTER
+    - What it does: Aligns text horizontally within the element
+    - Value "center": Text appears in the middle of the element
+    - Other values: left (default), right, justify
+    - Result: Hero headline and subtitle are centered on the page
+    - Common for hero sections: Creates focal point
+  */
+  text-align: center;
+}
+/* 
+===============================================================================
+                         TYPOGRAPHY STYLES
+===============================================================================
+
+These classes control how text looks and feels on the page
+*/
+
+/* 
+CLASS SELECTOR: ".headline"
+- Purpose: Styles main headings/titles throughout the site
+- Reusable: Can be applied to any element that needs headline styling
+*/
+.headline {
+  /* 
+    FONT-SIZE PROPERTY
+    - What it does: Controls how big the text appears
+    - Value "28px": 28 pixels tall
+    - Pixel units: Absolute size (doesn't change with user settings)
+    - 28px: Large enough to be prominent, not overwhelming
+    - Result: Headlines are significantly bigger than body text (usually 16px)
+  */
+  font-size: 28px;
+  
+  /* 
+    MARGIN-BOTTOM PROPERTY
+    - What it does: Adds space below this element
+    - Value "8px": Small amount of space
+    - Purpose: Separates headline from content below it
+    - Why not margin-top: Easier to control spacing with bottom margins
+    - Result: Clean visual separation between headline and following content
+  */
+  margin-bottom: 8px;
+}
+
+/* 
+CLASS SELECTOR: ".sub"
+- Targets: Elements with class="sub" (subtitle/subheading text)
+- Purpose: Styles secondary text that supports the main headline
+*/
+.sub {
+  /* 
+    COLOR PROPERTY
+    - What it does: Changes the text color
+    - Value "#555": Medium gray (darker than light gray, lighter than black)
+    - Hex explanation: #555 is shorthand for #555555
+    - Purpose: Subtle text that doesn't compete with main headline
+    - Result: Subdued, supporting text that's still readable
+  */
+  color: #555;
+}
+/* 
+===============================================================================
+                         MAIN CONTENT LAYOUT
+===============================================================================
+
+ID SELECTOR: "#content"
+- Targets: The main content area of the page
+- Purpose: Creates a two-column layout (main content + sidebar)
+*/
+
+#content {
+  /* 
+    DISPLAY: GRID
+    - What it does: Makes this element a "grid container"
+    - Modern layout: Powerful system for creating rows and columns
+    - Grid vs Flexbox: Grid is better for 2D layouts (rows AND columns)
+    - Child elements become "grid items" that automatically arrange
+  */
+  display: grid;
+  
+  /* 
+    GRID-TEMPLATE-COLUMNS PROPERTY
+    - What it does: Defines the width of each column
+    - Value "2fr 1fr": Creates 2 columns
+      - First column: "2fr" (2 fractional units = 2/3 of available space)
+      - Second column: "1fr" (1 fractional unit = 1/3 of available space)
+    - "fr" units: Flexible, share available space proportionally
+    - Result: Main content gets twice as much width as sidebar
+    - Responsive: Columns automatically resize as screen changes
+  */
+  grid-template-columns: 2fr 1fr;
+  
+  /* 
+    GAP PROPERTY
+    - What it does: Adds space between grid items
+    - Value "16px": 16 pixels of space between columns
+    - Modern shorthand: Replaces older grid-column-gap/grid-row-gap
+    - Result: Clean separation between main content and sidebar
+    - No margins needed: Gap handles the spacing automatically
+  */
+  gap: 16px;
+  
+  /* 
+    PADDING: 16px
+    - Adds space inside the content area
+    - All sides get 16px (shorthand for equal padding all around)
+    - Purpose: Content doesn't touch the edges of its container
+    - Result: Clean whitespace around the entire content section
+  */
+  padding: 16px;
+}
+/* 
+===============================================================================
+                           CARD COMPONENT
+===============================================================================
+
+CLASS SELECTOR: ".card"
+- Purpose: Creates a "card" design pattern (content in a bordered container)
+- Reusable: Can be applied to blog posts, profiles, products, etc.
+- Modern UI: Cards are popular in contemporary web design
+*/
+
+.card {
+  /* 
+    BORDER PROPERTY
+    - What it does: Adds a line around the entire element
+    - Value breakdown:
+      - "1px": Thin border (subtle, not overwhelming)
+      - "solid": Line style (continuous line)
+      - "#e5e7eb": Light gray color (subtle border that doesn't dominate)
+    - Purpose: Defines the card boundaries, separates content
+    - Result: Each card has a subtle outline
+  */
+  border: 1px solid #e5e7eb;
+  
+  /* 
+    PADDING: 12px
+    - Adds space inside the card (between border and content)
+    - Equal on all sides: Content won't touch the card edges
+    - 12px: Enough space for comfortable reading, not wasteful
+    - Result: Text and images have breathing room within each card
+  */
+  padding: 12px;
+  
+  /* 
+    BORDER-RADIUS PROPERTY
+    - What it does: Rounds the corners of the element
+    - Value "8px": Moderate rounding (not too sharp, not too round)
+    - Modern design: Rounded corners feel friendlier, more approachable
+    - Result: Cards have soft, rounded corners instead of sharp edges
+    - Visual effect: More polished, professional appearance
+  */
+  border-radius: 8px;
+}
+/* 
+===============================================================================
+                         BLOG POST ELEMENTS
+===============================================================================
+
+These classes style individual parts of blog posts/articles
+*/
+
+/* 
+CLASS SELECTOR: ".post-title"
+- Purpose: Styles the title/heading of each blog post
+- Typography hierarchy: Smaller than main headline, bigger than body text
+*/
+.post-title {
+  /* 
+    FONT-SIZE: 20px
+    - Medium-large text size
+    - Hierarchy: Smaller than .headline (28px), larger than body text (~16px)
+    - Purpose: Important enough to stand out, not overwhelming
+    - Result: Post titles are clearly headings but don't compete with page title
+  */
+  font-size: 20px;
+  
+  /* 
+    MARGIN-BOTTOM: 4px
+    - Small space below the title
+    - Tight spacing: Keeps title close to its metadata (date, tags, etc.)
+    - Visual grouping: Title and meta info are clearly related
+  */
+  margin-bottom: 4px;
+}
+
+/* 
+CLASS SELECTOR: ".post-meta"
+- Purpose: Styles metadata about blog posts (date, category, author, etc.)
+- Secondary information: Important but not the main focus
+*/
+.post-meta {
+  /* 
+    FONT-SIZE: 12px
+    - Small text size
+    - Hierarchy: Clearly secondary to post title and content
+    - Purpose: Visible but doesn't compete with main content
+    - Result: Date, category info appears subtle and supportive
+  */
+  font-size: 12px;
+  
+  /* 
+    COLOR: #666
+    - Medium gray color
+    - Darker than .sub (#555) but still muted
+    - Purpose: De-emphasizes metadata while keeping it readable
+    - Result: Date/category info doesn't dominate the design
+  */
+  color: #666;
+  
+  /* 
+    MARGIN-BOTTOM: 8px
+    - Space below metadata
+    - Separates meta info from post content/image
+    - Slightly larger than post-title margin: Creates visual breathing room
+  */
+  margin-bottom: 8px;
+}
+/* 
+===============================================================================
+                         SIDEBAR PANEL STYLING
+===============================================================================
+
+CLASS SELECTOR: ".panel-title"
+- Purpose: Styles headings within sidebar panels (like "Popular Tags")
+- Sidebar typography: Needs to be clear but not compete with main content
+*/
+.panel-title {
+  /* 
+    FONT-WEIGHT: 600
+    - Semi-bold weight (between normal 400 and bold 700)
+    - Modern approach: More subtle than "bold", still prominent
+    - Purpose: Makes sidebar headings stand out without being heavy
+    - Result: Clear hierarchy within sidebar sections
+  */
+  font-weight: 600;
+  
+  /* 
+    MARGIN-BOTTOM: 8px
+    - Space below sidebar headings
+    - Separates heading from its content (tags, links, etc.)
+    - Consistent with other bottom margins in the design
+    - Result: Clean visual separation in sidebar sections
+  */
+  margin-bottom: 8px;
+}
+/* 
+===============================================================================
+                           TAG ELEMENTS
+===============================================================================
+
+CLASS SELECTOR: ".tag"
+- Purpose: Styles clickable tag elements (like "budget", "streetfood")
+- Design pattern: Small, pill-shaped buttons commonly used for categories
+*/
+.tag {
+  /* 
+    DISPLAY: INLINE-BLOCK
+    - Hybrid behavior: Flows with text (inline) but accepts width/height (block)
+    - Why not inline: Can't add padding/margins effectively
+    - Why not block: Would stack vertically instead of side-by-side
+    - Result: Tags sit next to each other horizontally and can have padding
+  */
+  display: inline-block;
+  
+  /* 
+    PADDING: 4px 8px
+    - Small padding for compact tag appearance
+    - Vertical (4px): Minimal height, keeps tags small
+    - Horizontal (8px): Enough space so text doesn't touch edges
+    - Result: Text has breathing room but tags stay compact
+  */
+  padding: 4px 8px;
+  
+  /* 
+    BORDER: 1px solid #ddd
+    - Light gray border around each tag
+    - Creates defined edges for clickable areas
+    - #ddd: Light enough to be subtle, dark enough to be visible
+    - Result: Each tag has a clear boundary
+  */
+  border: 1px solid #ddd;
+  
+  /* 
+    MARGIN: 0 4px 4px 0
+    - Complex margin shorthand: top right bottom left
+    - Top: 0 (no space above)
+    - Right: 4px (space between horizontal tags)
+    - Bottom: 4px (space if tags wrap to new line)
+    - Left: 0 (no space before first tag)
+    - Result: Tags have proper spacing whether in rows or wrapped
+  */
+  margin: 0 4px 4px 0;
+  
+  /* 
+    BORDER-RADIUS: 9999px
+    - Very large radius value
+    - Effect: Creates perfectly rounded "pill" shape
+    - 9999px: Larger than any tag could be, ensures full rounding
+    - Modern design: Pill-shaped tags are trendy and friendly
+    - Result: Tags look like small, rounded buttons
+  */
+  border-radius: 9999px;
+  
+  /* 
+    TEXT-DECORATION: NONE
+    - Removes underlines from links
+    - Tags are often <a> elements (clickable links)
+    - Default: Links have underlines
+    - Result: Clean tag appearance without distracting underlines
+  */
+  text-decoration: none;
+}
+/* 
+===============================================================================
+                           FOOTER SECTION
+===============================================================================
+
+ID SELECTOR: "#bottombar"
+- Targets: The footer element at the bottom of the page
+- Purpose: Styles the page footer with copyright, legal info, etc.
+*/
+#bottombar {
+  /* 
+    BORDER-TOP PROPERTY
+    - Adds a line at the top of the footer
+    - "1px solid #e5e7eb": Thin, solid, light gray line
+    - Purpose: Visual separation between main content and footer
+    - Mirror of header: Creates bookend effect with header's border-bottom
+    - Result: Footer is clearly distinguished from page content
+  */
+  border-top: 1px solid #e5e7eb;
+  
+  /* 
+    PADDING: 12px 16px
+    - Vertical padding (12px): Comfortable space above/below footer text
+    - Horizontal padding (16px): Matches main content padding
+    - Consistent spacing: Footer aligns with rest of page layout
+    - Result: Footer content has proper breathing room
+  */
+  padding: 12px 16px;
+  
+  /* 
+    TEXT-ALIGN: CENTER
+    - Centers footer text horizontally
+    - Common pattern: Footer information is typically centered
+    - Creates balanced, professional appearance
+    - Result: Copyright text appears in middle of footer
+  */
+  text-align: center;
+  
+  /* 
+    COLOR: #777
+    - Medium-light gray text
+    - Lighter than main content: De-emphasizes footer information
+    - Still readable: Not so light that it's hard to see
+    - Purpose: Footer is secondary information, shouldn't dominate
+    - Result: Subtle, professional-looking footer text
+  */
+  color: #777;
+}
+
+/* 
+===============================================================================
+                           IMAGE STYLING
+===============================================================================
+
+These classes handle responsive images and image presentation
+*/
+
+/* 
+CLASS SELECTOR: ".hero-img"
+- Purpose: Styles large images in the hero/banner section
+- Responsive design: Must work on all screen sizes
+*/
+.hero-img {
+  /* 
+    MAX-WIDTH: 100%
+    - Prevents image from being wider than its container
+    - Responsive behavior: Image shrinks on smaller screens
+    - Never exceeds: Original size or container width (whichever is smaller)
+    - Critical for mobile: Prevents horizontal scrolling
+    - Result: Image always fits within available space
+  */
+  max-width: 100%;
+  
+  /* 
+    HEIGHT: AUTO
+    - Maintains image's aspect ratio (proportions)
+    - Works with max-width: As width changes, height adjusts proportionally
+    - Prevents distortion: Image doesn't get stretched or squished
+    - Result: Image scales naturally without looking weird
+  */
+  height: auto;
+  
+  /* 
+    BORDER-RADIUS: 8px
+    - Rounds the corners of the image
+    - Matches card border-radius: Consistent design language
+    - Softens appearance: More modern and friendly than sharp corners
+    - Result: Hero images have subtle rounded corners
+  */
+  border-radius: 8px;
+  
+  /* 
+    MARGIN-BOTTOM: 12px
+    - Space below the hero image
+    - Separates image from text content below
+    - Visual breathing room: Prevents content from feeling cramped
+    - Result: Clean separation between hero image and following content
+  */
+  margin-bottom: 12px;
+}
+
+/* 
+CLASS SELECTOR: ".post-img"
+- Purpose: Styles images within blog posts/articles
+- Different from hero images: Integrated into content flow
+*/
+.post-img {
+  /* 
+    WIDTH: 100%
+    - Forces image to fill the entire width of its container
+    - Different from max-width: Always takes full width available
+    - Consistent sizing: All post images have same width
+    - Result: Uniform appearance across all blog post images
+  */
+  width: 100%;
+  
+  /* 
+    HEIGHT: AUTO
+    - Same as hero-img: Maintains proper proportions
+    - Prevents distortion as width is forced to 100%
+    - Essential with width: 100%: Keeps images looking natural
+  */
+  height: auto;
+  
+  /* 
+    BORDER-RADIUS: 8px
+    - Consistent with other elements: Cards, hero images
+    - Design cohesion: Everything has same corner rounding
+    - Result: Post images match the overall design aesthetic
+  */
+  border-radius: 8px;
+  
+  /* 
+    MARGIN: 8px 0
+    - Vertical margin only: 8px above and below image
+    - No horizontal margin: Image uses full width
+    - Separates from surrounding text/content
+    - Result: Images have breathing room within blog posts
+  */
+  margin: 8px 0;
+  
+  /* 
+    DISPLAY: BLOCK
+    - Makes image behave as a block element
+    - Removes inline spacing issues: No unexpected gaps around image
+    - Full-width behavior: Works better with width: 100%
+    - Clean layout: Image sits properly within its container
+    - Result: Image takes up its own "line" without spacing issues
+  */
+  display: block;
+}
+
+/* 
+===============================================================================
+                         CSS SUMMARY FOR BEGINNERS
+===============================================================================
+
+KEY CONCEPTS COVERED:
+
+1. SELECTORS:
+   - Element: body { } (targets HTML elements)
+   - Class: .classname { } (targets class="classname")  
+   - ID: #idname { } (targets id="idname")
+
+2. LAYOUT SYSTEMS:
+   - Flexbox: display: flex (1D layouts, alignment)
+   - Grid: display: grid (2D layouts, columns/rows)
+   - Box Model: margin, padding, border, content
+
+3. RESPONSIVE DESIGN:
+   - Flexible units: fr, %, auto
+   - Responsive images: max-width: 100%, height: auto
+   - Flexible layouts: Grid and flexbox adapt to screen size
+
+4. TYPOGRAPHY HIERARCHY:
+   - Font sizes: 28px (headlines) > 20px (post titles) > 16px (body) > 12px (meta)
+   - Font weights: bold, 600 (semi-bold), normal
+   - Colors: Dark for important text, gray for secondary text
+
+5. VISUAL DESIGN:
+   - Border radius: Rounded corners for modern look
+   - Spacing: Consistent margins and padding for rhythm
+   - Colors: Subtle backgrounds and borders
+   - Cards: Contained content with borders and padding
+
+6. CSS ORGANIZATION:
+   - Global styles first (body)
+   - Layout sections (header, main, footer)
+   - Components (cards, tags)
+   - Utilities (images, typography)
+
+Remember: CSS is about PRESENTATION, not CONTENT.
+Use semantic HTML for meaning, CSS for appearance!
+*/

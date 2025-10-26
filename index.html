@@ -1,0 +1,123 @@
+<!-- Start of every HTML document  with the html 5 declaration-->
+<!DOCTYPE HTML>
+<!-- Html tag that wraps all content and specifies the language for the document -->
+<html lang="en">
+<!-- head element which contains the meta information for the page and 
+ often specifies things like title, links to css, scaling for device and window size,
+ the default character set used. -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WanderNote - Travel Journal</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<!-- Body element - wraps the main content of the page -->
+
+<body>
+    <!--header element often used for site navigation and branding along the top of a webpage -->
+    <header id="topbar">
+        <div class="logo">WanderNote</div>
+        <!-- Nav element identifies the main navigation links for the site -->
+        <nav class="links">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Destinations</a>
+            <a class="nav-link" href="#">Tips</a>
+            <a class="nav-link" href="#">About</a>
+        </nav>
+    </header>
+
+    <!-- Main element - wraps the primary content 
+     of the page and there can only be one -->
+    <main>
+        <!-- Section element that is meant for grouping related content and meant to 
+         enhance the structure and readability of the page and acts as a container for
+         the main content -->
+        <section id="hero">
+            <!--div element is a generic container for content -->
+            <div class="hero-inner">
+                <!-- figure element is used to encapsulate media content like images, diagrams, code snippets
+                 and act as more descriptive notes to a screen reader. -->
+                <figure>
+                    <img class="hero-img"
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop"
+                        alt="Photo of a traveler overlooking a long road through desert mountains" />
+                </figure>
+            </div>
+            <!-- h1 element acts as the most important heading on the page and should serves as the main tage to help
+             convey the purpose of the page  and optimize for SEO-->
+            <h1 class="headline"> Stories from the road</h1>
+            <p class="sub"> Notes, photos, and pocket itineraries.</p>
+        </section>
+
+        <!-- Section element defining the next section of content on the website within it's own grouping.-->
+        <section id="content">
+            <div class="left-col">
+                <!-- Article element meant to separate -->
+                <article class="post-card">
+                    <!--h2 element for the sub heading under h1 and the title of article -->
+                    <h2 class="post-title">Kyoto in 48 hours</h2>
+                    <!-- small div element for the post meta information with a time element
+                     meant to provide additional context about the post that can enhance SEO-->
+                    <div class="post-meta">
+                        <time datetime "2025-05">May 2025 · Asia · Budget</time>
+                    </div>
+                    <!-- figure element to encapsulate media content like images, diagrams, code snippets
+                     and act as more descriptive notes to a screen reader. -->
+                    <figure>
+                        <img class="post-img" src="https://picsum.photos/id/1016/800/500"
+                            alt="Picture of a desert mountain valley." />
+                    </figure>
+
+                    <!-- div element to contain another section of the main content of the post-->
+                    <div class="post-body">
+                        <p>
+                            Exploring the vibrant streets of Kyoto, from the historic temples to the bustling markets.
+                            Indulged in local delicacies like ramen and matcha.
+                        </p>
+                    </div>
+                </article>
+
+                <!--Another article element helps section the next portion of content-->
+                <article class="post card">
+                    <h2 class="post-title">Lisbon Hill Walk</h2>
+                    <div class="post-meta">
+                        <time datetime="2025-04">April 2025 · Europe · Adventure · Walkable</time>
+                    </div>
+                    <figure>
+                        <img class="post-img" src="https://picsum.photos/id/1035/800/500"
+                            alt="Standing in front of a waterfall on a hiking trail with a rainbow" />
+                    </figure>
+                    <div class="post-body">
+                        <p>
+                            Wandered through the charming hills of Lisbon, soaking in the stunning views from Miradouro.
+                            Enjoyed the iconic trams and savored delicious street food along the way.
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <!-- Aside element meant for related content meant to be beside the main content-->
+            <aside class="right-col">
+                <section class="panel">
+                    <h3 class="panel-title">Popular Tags</h3>
+                    <!-- Nav element for the list of tags used for navigation and filtering content -->
+                    <nav class="tag-list">
+                        <ul>
+                            <li><a href="#">Street Food</a></li>
+                            <li><a href="#">Travel Tips</a></li>
+                            <li><a href="#">Budget</a></li>
+                            <li><a href="#">Itinerary</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </aside>
+        </section>
+    </main>
+
+    <!-- Footer element meant for footer content at the bottom of the page -->
+    <footer id="bottombar">
+        <p class="copy">&copy; 2025 WanderNote</p>
+    </footer>
+</body>
+
+</html>
